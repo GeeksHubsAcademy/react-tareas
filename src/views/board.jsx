@@ -4,16 +4,10 @@ import Task from '../components/task.jsx';
 
 import { connect } from 'react-redux';
 
-class Board extends Component {
+export class Board extends Component {
   state = {
     newTaskText: '',
-
-    // tasks: JSON.parse(localStorage.getItem('tasks')) || [],
   };
-
-  // componentDidUpdate() {
-  //   localStorage.setItem('tasks', JSON.stringify(this.state.tasks));
-  // }
 
   addTask = text => {
     text = text.trim();
@@ -25,25 +19,8 @@ class Board extends Component {
         completed: false,
       };
 
-      this.props.dispatch({ type: 'ADD_TODO', payload: newTask });
+      this.props.dispatch({ type: 'ADD_TODO', newTaskToAdd: newTask });
     }
-  };
-
-  editTask = task => {
-    task = {
-      ...task,
-      updatedAt: new Date(),
-    };
-
-    this.setState({
-      tasks: this.state.tasks.map(_task => (_task.id === task.id ? task : _task)),
-    });
-  };
-
-  removeTask = id => {
-    this.setState({
-      tasks: this.state.tasks.filter(task => task.id !== id),
-    });
   };
 
   handleChange = ev => {
@@ -53,6 +30,7 @@ class Board extends Component {
   handleKeyUp = ev => {
     if (ev.keyCode === 13) {
       this.addTask(ev.target.value);
+      this.setState({newTaskText:''});
     }
   };
 
@@ -64,7 +42,7 @@ class Board extends Component {
         </header>
         <main className='tasks'>
           {this.props.tasks.map(task => (
-            <Task data={task} deleteTask={this.removeTask} key={task.id} updateTask={this.editTask} />
+            <Task data={task}  key={task.id} />
           ))}
         </main>
       </div>
@@ -75,4 +53,5 @@ class Board extends Component {
 export default connect(
   state => ({ tasks: state.tasks }),
   dispatch => ({ dispatch }),
-)(Board);
+)
+(Board);

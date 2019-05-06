@@ -1,7 +1,8 @@
 import React from 'react';
 import './task.scss';
+import {connect} from 'react-redux'
 
-class Task extends React.Component {
+export class Task extends React.Component {
   state = {
     newText: this.props.data.text,
   };
@@ -14,33 +15,52 @@ class Task extends React.Component {
       this.edit(ev);
     }
   };
-  edit = ev => {
-    let editedTask = {
-      ...this.props.data,
-      text: this.state.newText,
-    };
-    this.props.updateTask(editedTask);
-    ev.target.blur();
-  };
+  // edit = ev => {
+  //   let editedTask = {
+  //     ...this.props.data,
+  //     text: this.state.newText,
+  //   };
+  //   this.props.updateTask(editedTask);
+  //   ev.target.blur();
+  // };
   markAsCompleted = () => {
-    let editedTask = {
-      ...this.props.data,
-      completed: !this.props.data.completed,
-    };
-    this.props.updateTask(editedTask);
+    // let editedTask = {
+    //   ...this.props.data,
+    //   completed: !this.props.data.completed,
+    // };
+    // this.props.updateTask(editedTask);
+    this.props.complete(this.props.data.id );
+
+
   };
+  delete = () => {
+    this.props.delete(  this.props.data.id  )
+
+  }
   render() {
     return (
       <div className={'task ' + (this.props.data.completed ? 'completed' : '')}>
-        <input type='text' value={this.state.newText} onChange={this.handleChange} onKeyUp={this.isEnter} onBlur={this.edit} />
+        {/* <input type='text' value={this.state.newText} onChange={this.handleChange} /> */}
 
-        <div className='actions'>
-          <button onClick={() => this.props.deleteTask(this.props.data.id)}>delete</button>
-          <button onClick={this.markAsCompleted}>completed</button>
+        <div className="text">{this.props.data.text}</div>
+
+        <div className='actions '>
+          <button className="delete" onClick={this.delete}>delete</button>
+          <button className="complete" onClick={this.markAsCompleted}>completed</button>
         </div>
       </div>
     );
   }
 }
 
-export default Task;
+
+const TaskConnected = connect(
+  null,
+  dispatch => ({
+    delete: id => dispatch({ type: 'DELETE_TASK', id }),
+    complete: id => dispatch({ type: 'TOGGLE_COMPLETED_TASK', id }),
+  }),
+)(Task);
+
+
+export default TaskConnected;

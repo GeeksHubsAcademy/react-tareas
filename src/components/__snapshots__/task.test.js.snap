@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot match it should keep consistent 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Task
+    data={
+      Object {
+        "text": "aprender TDD",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="text"
+        >
+          aprender TDD
+        </div>,
+        <div
+          className="actions "
+        >
+          <button
+            className="delete"
+            onClick={[Function]}
+          >
+            delete
+          </button>
+          <button
+            className="complete"
+            onClick={[Function]}
+          >
+            completed
+          </button>
+        </div>,
+      ],
+      "className": "task ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "aprender TDD",
+          "className": "text",
+        },
+        "ref": null,
+        "rendered": "aprender TDD",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <button
+              className="delete"
+              onClick={[Function]}
+            >
+              delete
+            </button>,
+            <button
+              className="complete"
+              onClick={[Function]}
+            >
+              completed
+            </button>,
+          ],
+          "className": "actions ",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "delete",
+              "className": "delete",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "delete",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "completed",
+              "className": "complete",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "completed",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="text"
+          >
+            aprender TDD
+          </div>,
+          <div
+            className="actions "
+          >
+            <button
+              className="delete"
+              onClick={[Function]}
+            >
+              delete
+            </button>
+            <button
+              className="complete"
+              onClick={[Function]}
+            >
+              completed
+            </button>
+          </div>,
+        ],
+        "className": "task ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "aprender TDD",
+            "className": "text",
+          },
+          "ref": null,
+          "rendered": "aprender TDD",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                className="delete"
+                onClick={[Function]}
+              >
+                delete
+              </button>,
+              <button
+                className="complete"
+                onClick={[Function]}
+              >
+                completed
+              </button>,
+            ],
+            "className": "actions ",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "delete",
+                "className": "delete",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "delete",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "completed",
+                "className": "complete",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "completed",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
